@@ -11,9 +11,20 @@ O problema escolhido consiste em decidir quando um sistema de irrigacao deve ini
 
 Nesta primeira etapa, o projeto apresenta somente a especificacao do problema. Ainda nao ha implementacao em codigo.
 
+## [P4-ETAPA-02] Contrato semantico e testes
+
+A segunda etapa transforma a especificacao inicial em um contrato de comportamento independente de linguagem e paradigma. Esse contrato define entradas, saidas, prioridades e resultados esperados para que as quatro implementacoes futuras possam ser avaliadas pelos mesmos criterios.
+
+Foram definidos:
+
+- 10 casos normais;
+- 4 casos-limite;
+- 3 casos de entrada invalida.
+
 ## Documentos da Etapa 01
 
 - `docs/especificacao.md`: especificacao completa do problema;
+- `docs/contrato-semantico.md`: contrato de comportamento da Etapa 02;
 - `testes/casos.md`: exemplos de execucao e casos-limite.
 
 ## Paradigmas previstos
@@ -29,4 +40,3 @@ Nesta primeira etapa, o projeto apresenta somente a especificacao do problema. A
 - Orientado a objetos: C++;
 - Funcional: Haskell;
 - Logico: Prolog.
-

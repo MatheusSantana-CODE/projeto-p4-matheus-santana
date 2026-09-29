@@ -8,3 +8,11 @@
 4. C++ foi considerada para as abordagens imperativa e orientada a objetos, mas cada solucao devera respeitar as caracteristicas do paradigma correspondente.
 5. A Etapa 01 nao incluira codigo-fonte, pois seu objetivo e especificar o comportamento esperado.
 
+## [P4-ETAPA-02]
+
+1. O contrato utiliza os mesmos dados e limites definidos na Etapa 01.
+2. A validacao das entradas possui prioridade sobre as regras operacionais.
+3. Falha de sensor, sistema desabilitado e recuperacao de falha possuem comportamentos explicitos para impedir resultados ambiguos.
+4. As saidas observaveis foram padronizadas em resultado, estado resultante, acao da valvula e mensagem.
+5. Foram criados 10 casos normais, 4 casos-limite e 3 casos de entrada invalida.
+6. Os mesmos casos deverao ser utilizados nas quatro implementacoes futuras.
