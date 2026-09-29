@@ -1,76 +1,76 @@
-# [P4-ETAPA-03] Implementacao imperativa
+# [P4-ETAPA-03] Implementação imperativa
 
-## 1. Visao geral
+## 1. Visão geral
 
-Esta pasta apresenta a implementacao imperativa, em C++17, do Sistema de Gerenciamento de Irrigacao Inteligente. A solucao segue o contrato semantico definido na Etapa 02 e utiliza os mesmos 17 casos para validacao.
+Esta pasta apresenta a implementação imperativa, em C++17, do Sistema de Gerenciamento de Irrigação Inteligente. A solução segue o contrato semântico definido na Etapa 02 e utiliza os mesmos 17 casos para validação.
 
-A implementacao evita classes, heranca, polimorfismo e outras abstracoes orientadas a objetos. O comportamento e expresso por variaveis, atribuicoes, condicionais, repeticao, subprogramas e modificacao explicita do estado.
+A implementação evita classes, herança, polimorfismo e outras abstrações orientadas a objetos. O comportamento é expresso por variáveis, atribuições, condicionais, repetição, subprogramas e modificação explícita do estado.
 
 ## 2. Arquivos
 
 | Arquivo | Finalidade |
 |---|---|
-| `irrigacao.h` | Tipos simples e declaracoes dos subprogramas |
-| `irrigacao.cpp` | Validacao, regras do contrato e conversoes para texto |
-| `main.cpp` | Programa interativo e manutencao do estado mutavel |
-| `testes.cpp` | Execucao automatizada dos casos da Etapa 02 |
-| `Makefile` | Comandos de compilacao e teste |
+| `irrigacao.h` | Tipos simples e declarações dos subprogramas |
+| `irrigacao.cpp` | Validação, regras do contrato e conversões para texto |
+| `main.cpp` | Programa interativo e manutenção do estado mutável |
+| `testes.cpp` | Execução automatizada dos casos da Etapa 02 |
+| `Makefile` | Comandos de compilação e teste |
 
 ## 3. Estados mantidos
 
-O programa principal mantem as seguintes variaveis durante a execucao:
+O programa principal mantém as seguintes variáveis durante a execução:
 
-- `estadoAtual`: situacao atual da irrigacao;
-- `sistemaHabilitado`: permissao para funcionamento;
-- `limiteInicio`: valor para iniciar a irrigacao;
-- `limiteInterrupcao`: valor para parar a irrigacao;
-- `executando`: controla a repeticao do menu.
+- `estadoAtual`: situação atual da irrigação;
+- `sistemaHabilitado`: permissão para funcionamento;
+- `limiteInicio`: valor para iniciar a irrigação;
+- `limiteInterrupcao`: valor para parar a irrigação;
+- `executando`: controla a repetição do menu.
 
-Esses valores podem mudar ao longo da execucao. Por isso, representam o estado mutavel do programa.
+Esses valores podem mudar ao longo da execução. Por isso, representam o estado mutável do programa.
 
-## 4. Operacoes que modificam estado
+## 4. Operações que modificam estado
 
 - O processamento de uma leitura atribui `saida.estadoResultante` a `estadoAtual`.
-- A opcao de configuracao atribui novos valores aos limites.
-- A opcao de habilitacao inverte o valor de `sistemaHabilitado`.
-- A opcao de encerramento modifica `executando` para terminar o laco principal.
+- A opção de configuração atribui novos valores aos limites.
+- A opção de habilitação inverte o valor de `sistemaHabilitado`.
+- A opção de encerramento modifica `executando` para terminar o laço principal.
 
 ## 5. Efeitos colaterais
 
 Os efeitos colaterais aparecem principalmente em `main.cpp`:
 
 - leitura de valores com `std::cin`;
-- exibicao de mensagens com `std::cout`;
-- alteracao das variaveis que representam o estado atual.
+- exibição de mensagens com `std::cout`;
+- alteração das variáveis que representam o estado atual.
 
-A funcao `avaliarIrrigacao` nao realiza entrada ou saida. Ela recebe os dados por parametro e devolve uma estrutura com o resultado.
+A função `avaliarIrrigacao` não realiza entrada ou saída. Ela recebe os dados por parâmetro e devolve uma estrutura com o resultado.
 
 ## 6. Estruturas de controle
 
-- `while` mantem o programa ativo e valida respostas do usuario;
-- `switch` seleciona a operacao do menu e converte enumeracoes em texto;
+- `while` mantém o programa ativo e valida respostas do usuário;
+- `switch` seleciona a operação do menu e converte enumerações em texto;
 - `if` e `else` aplicam a prioridade das regras do contrato;
 - `for` percorre os casos de teste;
-- retornos antecipados encerram a avaliacao assim que uma regra prioritaria e satisfeita.
+- retornos antecipados encerram a avaliação assim que uma regra prioritária é satisfeita.
 
-## 7. Organizacao dos subprogramas
+## 7. Organização dos subprogramas
 
-- `entradaValida`: verifica o dominio dos dados e a coerencia dos limites;
+- `entradaValida`: verifica o domínio dos dados e a coerência dos limites;
 - `avaliarIrrigacao`: aplica as regras na ordem de prioridade;
 - `lerInteiro` e `lerSimNao`: tratam a entrada interativa;
-- `exibirSaida` e `exibirMenu`: concentram a saida para o usuario;
-- funcoes `...ParaTexto`: convertem valores enumerados em texto;
-- `executarCaso`: compara uma saida obtida com o resultado esperado.
+- `exibirSaida` e `exibirMenu`: concentram a saída para o usuário;
+- funções `...ParaTexto`: convertem valores enumerados em texto;
+- `executarCaso`: compara uma saída obtida com o resultado esperado.
 
-Os parametros evitam dependencias desnecessarias de variaveis globais e tornam explicitos os dados utilizados por cada subprograma.
+Os parâmetros evitam dependências desnecessárias de variáveis globais e tornam explícitos os dados utilizados por cada subprograma.
 
-## 8. Por que a solucao e imperativa
+## 8. Por que a solução é imperativa
 
-A solucao descreve uma sequencia de comandos que modifica variaveis ao longo do tempo. O fluxo e determinado por condicionais, repeticoes e atribuicoes, e o programa principal conserva um estado mutavel entre as leituras. As regras sao executadas em ordem explicita e os efeitos colaterais de entrada, saida e atualizacao de estado sao visiveis.
+A solução descreve uma sequência de comandos que modifica variáveis ao longo do tempo. O fluxo é determinado por condicionais, repetições e atribuições, e o programa principal conserva um estado mutável entre as leituras. As regras são executadas em ordem explícita e os efeitos colaterais de entrada, saída e atualização de estado são visíveis.
 
-Embora a linguagem C++ suporte orientacao a objetos, essa implementacao usa apenas recursos adequados ao modelo imperativo. As `structs` agrupam dados e nao possuem metodos ou encapsulamento de comportamento.
+Embora a linguagem C++ suporte orientação a objetos, essa implementação usa apenas recursos adequados ao modelo imperativo. As `structs` agrupam dados e não possuem métodos ou encapsulamento de comportamento.
 
-## 9. Compilacao
+## 9. Compilação
 
 Dentro da pasta `imperativo`, execute:
 
@@ -90,7 +90,7 @@ Para executar os testes:
 make test
 ```
 
-Tambem e possivel compilar manualmente:
+Também é possível compilar manualmente:
 
 ```bash
 g++ -std=c++17 -Wall -Wextra -pedantic main.cpp irrigacao.cpp -o irrigacao
@@ -98,7 +98,6 @@ g++ -std=c++17 -Wall -Wextra -pedantic testes.cpp irrigacao.cpp -o testes
 ./testes
 ```
 
-## 10. Criterio de validacao
+## 10. Critério de validação
 
-A implementacao e considerada valida quando os 17 casos definidos em `testes/casos.md` forem aprovados. O executavel de testes retorna codigo zero quando todos os casos passam e codigo diferente de zero quando algum resultado diverge do contrato.
-
+A implementação é considerada válida quando os 17 casos definidos em `testes/casos.md` forem aprovados. O executável de testes retorna código zero quando todos os casos passam e código diferente de zero quando algum resultado diverge do contrato.
