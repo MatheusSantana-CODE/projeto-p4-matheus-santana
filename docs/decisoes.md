@@ -16,3 +16,13 @@
 4. As saidas observaveis foram padronizadas em resultado, estado resultante, acao da valvula e mensagem.
 5. Foram criados 10 casos normais, 4 casos-limite e 3 casos de entrada invalida.
 6. Os mesmos casos deverao ser utilizados nas quatro implementacoes futuras.
+
+## [P4-ETAPA-03]
+
+1. A implementacao imperativa utiliza C++17, linguagem considerada desde a Etapa 01.
+2. Foram utilizadas estruturas simples e enumeracoes, sem classes, heranca ou polimorfismo.
+3. O fluxo do contrato aparece explicitamente em atribuicoes, condicionais e retornos antecipados.
+4. O estado atual da irrigacao e mantido em uma variavel mutavel no programa principal.
+5. As operacoes de entrada e saida sao efeitos colaterais concentrados no programa principal.
+6. A funcao de avaliacao recebe parametros e devolve o proximo estado e a acao da valvula.
+7. Os 17 casos da Etapa 02 foram transformados em testes automatizados.

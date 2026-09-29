@@ -21,11 +21,24 @@ Foram definidos:
 - 4 casos-limite;
 - 3 casos de entrada invalida.
 
+## [P4-ETAPA-03] Implementacao imperativa
+
+A terceira etapa implementa o contrato semantico em C++ utilizando predominantemente o paradigma imperativo. O fluxo de decisao e explicito, o estado do sistema e mutavel e a solucao e organizada em subprogramas, sem classes ou hierarquias orientadas a objetos.
+
+A pasta `imperativo/` contem:
+
+- programa interativo;
+- regras de avaliacao;
+- tipos e subprogramas;
+- testes automatizados dos 17 casos da Etapa 02;
+- documentacao das decisoes de implementacao.
+
 ## Documentos da Etapa 01
 
 - `docs/especificacao.md`: especificacao completa do problema;
 - `docs/contrato-semantico.md`: contrato de comportamento da Etapa 02;
 - `testes/casos.md`: exemplos de execucao e casos-limite.
+- `imperativo/`: implementacao imperativa em C++ e validacao automatizada.
 
 ## Paradigmas previstos
 
